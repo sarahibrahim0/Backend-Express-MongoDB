@@ -150,9 +150,7 @@ if(files){
     else{
       return res.status(404).json({success: false, message:"product not found"})
     }
-
 })
-
 
 //edit product
 
