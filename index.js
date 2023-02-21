@@ -1,13 +1,10 @@
 const express = require('express');
+
 const app = express();
 
 const morgan = require('morgan');
 
 const mongoose = require('mongoose');
-
-const session = require('express-session');
-
-const parseurl = require('parseurl');
 
 
 // Enable express to parse body data from raw application/json dat
@@ -55,41 +52,6 @@ app.use(`/api/v1/products`, productsRouter);
 app.use(`/api/v1/categories`, categoriesRouter);
 app.use(`/api/v1/users`, usersRouter);
 app.use(`/api/v1/orders`, ordersRouter);
-
-
-
-
-
-
-
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true
-}))
-
-app.use(function (req, res, next) {
-  if (!req.session.views) {
-    req.session.views = {}
-  }
-
-  // get the url pathname
-  var pathname = parseurl(req).pathname
-
-  // count the views
-  req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
-
-  next();
-})
-
-app.get('/api/v1/session', function (req, res, next) {
-  console.log(req.session.views)
-  res.status(200).json({success: true , message:  req.session.views['/api/v1/session'] });
-})
-
-
-
-
 
 
 //Database
