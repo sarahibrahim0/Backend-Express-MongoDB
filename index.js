@@ -9,6 +9,7 @@ const session = require('express-session');
 
 const parseurl = require('parseurl');
 
+const port = 3000;
 
 
 
@@ -99,7 +100,7 @@ mongoose
   .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Database Connection is ready.");
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
   console.log('server is runnin now on 3000')
 })
 
