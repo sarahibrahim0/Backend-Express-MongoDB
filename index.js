@@ -99,6 +99,10 @@ mongoose
   .connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Database Connection is ready.");
+app.listen(3000, ()=>{
+  console.log('server is runnin now on 3000')
+})
+
   })
   .catch((err) => {
     console.log(err);
@@ -116,9 +120,3 @@ mongoose
 
 
 
-
-app.listen(3000, ()=>{
-
-    console.log(api)
-    console.log('server is runnin now on 3000')
-})
