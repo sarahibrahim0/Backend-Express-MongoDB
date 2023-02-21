@@ -18,7 +18,6 @@ app.options('*', cors())
 
 //environment  variables
 require('dotenv/config');
-const api = process.env.API_URL;
 
 
 //helpers
@@ -52,10 +51,10 @@ const ordersRouter = require('./routers/orders')
 
 
 //routers
-app.use(`${api}/products`, productsRouter);
-app.use(`${api}/categories`, categoriesRouter);
-app.use(`${api}/users`, usersRouter);
-app.use(`${api}/orders`, ordersRouter);
+app.use(`/api/v1/products`, productsRouter);
+app.use(`/api/v1/categories`, categoriesRouter);
+app.use(`/api/v1/users`, usersRouter);
+app.use(`/api/v1/orders`, ordersRouter);
 
 
 
