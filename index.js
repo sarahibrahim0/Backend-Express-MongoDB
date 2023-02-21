@@ -27,7 +27,8 @@ const errHandler = require('./helpers/error-handling');
 const authJwt = require('./helpers/jwt');
 
 //middleware
-app.use(express.json())
+app.use(express.json());
+
 //to tell the backend that it will deals with json data from frontend
 app.use(morgan('tiny'))
 app.use(authJwt())
