@@ -6,7 +6,6 @@ const morgan = require('morgan');
 
 const mongoose = require('mongoose');
 
-
 // Enable express to parse body data from raw application/json dat
 
 const cors = require('cors');
@@ -33,19 +32,11 @@ app.use(errHandler);
 
 app.use('/public/uploads',express.static(__dirname+'/public/uploads'));
 
-
-// Session Setup
-
-
-
-
 //routes
 const productsRouter = require('./routers/products')
 const categoriesRouter = require('./routers/categories')
 const usersRouter = require('./routers/users')
 const ordersRouter = require('./routers/orders')
-// const sessionRouter = require('./routers/session')
-
 
 //routers
 app.use(`/api/v1/products`, productsRouter);
