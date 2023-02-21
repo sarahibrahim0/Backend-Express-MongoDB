@@ -20,7 +20,7 @@ app.options('*', cors())
 require('dotenv/config');
 const api = process.env.API_URL;
 
-const port = process.env.PORT
+const port = 8000|| process.env.PORT;
 
 //helpers
 const errHandler = require('./helpers/error-handling');
