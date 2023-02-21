@@ -10,9 +10,6 @@ const session = require('express-session');
 const parseurl = require('parseurl');
 
 
-
-
-
 // Enable express to parse body data from raw application/json dat
 
 const cors = require('cors');
