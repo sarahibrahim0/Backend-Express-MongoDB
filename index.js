@@ -20,7 +20,6 @@ app.options('*', cors())
 require('dotenv/config');
 const api = process.env.API_URL;
 
-const port = 8000|| process.env.PORT;
 
 //helpers
 const errHandler = require('./helpers/error-handling');
@@ -99,7 +98,7 @@ mongoose
   .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Database Connection is ready.");
-app.listen(port, ()=>{
+app.listen(3000, ()=>{
   console.log('server is runnin now on 3000')
 })
 
