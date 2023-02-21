@@ -96,7 +96,7 @@ app.get('/api/v1/session', function (req, res, next) {
 
 //Database
 mongoose
-  .connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Database Connection is ready.");
 app.listen(3000, ()=>{
