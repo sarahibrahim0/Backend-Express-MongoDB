@@ -20,6 +20,8 @@ app.options('*', cors())
 require('dotenv/config');
 const api = process.env.API_URL;
 
+const port = process.env.PORT
+
 //helpers
 const errHandler = require('./helpers/error-handling');
 const authJwt = require('./helpers/jwt');
@@ -96,7 +98,7 @@ mongoose
   .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Database Connection is ready.");
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
   console.log('server is runnin now on 3000')
 })
 
