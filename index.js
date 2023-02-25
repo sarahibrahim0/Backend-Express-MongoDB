@@ -48,7 +48,6 @@ const productsRouter = require('./routers/products')
 const categoriesRouter = require('./routers/categories')
 const usersRouter = require('./routers/users')
 const ordersRouter = require('./routers/orders')
-// const sessionRouter = require('./routers/session')
 
 
 //routers
