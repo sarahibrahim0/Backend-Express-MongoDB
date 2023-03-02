@@ -11,7 +11,6 @@ const { json } = require("body-parser");
 router.post(`/register`, async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const passwordHash = req.body.password;
-
   const user = new User({
     name: req.body.name,
     email: req.body.email,
